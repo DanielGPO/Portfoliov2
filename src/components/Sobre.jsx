@@ -8,7 +8,7 @@ function Sobre() {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
       viewport={{ once: true }}
-      className="md:h-[1200px] bg-gray-300 pt-5 md:pt-0 lg:h-screen flex relative flex-col text-center md:text-left md:flex-row  px-10 justify-evenly mx-auto items-center"
+      className="md:h-[1200px] pb-10 bg-gray-300 pt-5 md:pt-0 lg:h-screen flex relative flex-col text-center md:text-left md:flex-row  px-10 justify-evenly mx-auto items-center"
     >
       <h3 className="absolute top-20 md:top-8 hidden md:inline-block uppercase tracking-[20px] text-black">
         Sobre mim
@@ -32,30 +32,34 @@ function Sobre() {
           Um pouquinho{" "}
           <span className="underline decoration-blue-800"> Sobre mim</span>
         </h4>
-        <p className="lg:text-lg text-md font-semibold">
-          Tenho 21 anos, estudei sozinho por 3 anos para concursos militares e a
-          cada ano que passava mais perto eu sentia que estava de ser aprovado
-          mas pra ser sincero essa vontade nunca veio realmente de mim, eu
-          percebi que havia herdado os desejos dos meus familiares e me vi cada
-          vez mais sem a sensação de vontade própria. Eu não odiava a ideia de
-          "estabilidade" que me prometiam mas eu não queria dedicar minha vida
-          toda a um ideal que não era meu. Uma frase famosa do quadrinista Stan
-          Lee sempre ficou gravada na minha memória onde ele dizia "Working with
-          what you love isn't work at all" ou algo assim. Eu sempre tive
-          facilidade para aprender, sejam fórmulas pra calcular volumes de
-          pirâmides, inglês ou oque é uma oração subordinada substantiva
-          objetiva direta e foi pensando nisso que buscando algo que eu quisesse
-          fazer pra vida toda eu encontrei a
-          <span className="underline decoration-sky-800"> Programação.</span> Eu
-          estou apaixonado, e percebi isso logo no começo aprendendo HTML e CSS,
-          o suficiente pra me fazer entrar nessa aventura de cabeça. Estou
-          estudando sozinho do jeito que eu gosto e sinto confortável, quanto
-          mais eu aprendo mais quero aprender e atualmente estou cursando
-          ciências da computação oque me deixou ainda mais envolvido com esse
-          mundo. eu poderia ficar falando o como estou apaixonado por essa área
-          pra sempre aqui mas acho que vai ser mais fácil de explicar te
-          mostrando. Be my guest!
-        </p>
+        <ul className="flex flex-col">
+          <li>
+            <p className="lg:text-xl text-lg py-2 font-semibold">
+          ❤ Cursando Bacharelado em Ciência da Computação
+          </p>
+          </li>
+          <li>
+            <p className="lg:text-xl text-lg py-2 font-semibold">
+         📌 Possuo conhecimentos avançados em Front-End
+          </p>
+          </li>
+          <li>
+            <p className="lg:text-xl text-lg py-2 font-semibold">
+        📖 Atualmente estou focando no Back-End para me tornar um Full-stack
+          </p>
+          </li>
+          <li>
+            <p className="lg:text-xl text-lg py-2 font-semibold">
+         💻 Linguagem com mais domínio: Javascript
+          </p>
+          </li>
+          <li>
+            <p className="lg:text-xl text-lg py-2 font-semibold">
+         🍪 Possuo 21 anos e comecei a estudar programação aos 19
+          </p>
+          </li>
+        </ul>
+       
       </div>
     </motion.div>
   );

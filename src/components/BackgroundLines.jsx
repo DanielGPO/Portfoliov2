@@ -1,7 +1,7 @@
-import React from "react";
+
 import { motion } from "framer-motion";
 
-function BackgroundCircles() {
+function BackgroundLines() {
   return (
     <div className=" whitespace-nowrap overflow-auto scrollbar-x-hide">
       <motion.div
@@ -63,4 +63,4 @@ function BackgroundCircles() {
   );
 }
 
-export default BackgroundCircles;
+export default BackgroundLines;

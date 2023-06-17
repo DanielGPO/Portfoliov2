@@ -37,7 +37,7 @@ function TrueExp() {
   return (
     <div className="pb-5 bg-slate-900/95">
       <div>
-        <p className="font-bold py-14 uppercase tracking-[20px] text-center  text-white text-2xl">
+        <p className="font-bold py-14 uppercase tracking-[13px] md:tracking-[20px] text-center  text-white text-2xl">
           Experiências
         </p>
       </div>

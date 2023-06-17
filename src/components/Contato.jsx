@@ -37,17 +37,17 @@ function Contato() {
   };
   return (
     <div
-      className="h-screen flex relative flex-col text-center
+      className="h-screen pb-24 xl:pb-10 flex relative flex-col text-center
      md:text-left md:flex-row px-10 justify-evenly mx-auto items-center bg-gradient-to-t from-black to-slate-800"
     >
-      <h3 className="absolute top-6 md:top-10 uppercase tracking-[20px] text-[#f7ab0a] text-2xl">
+      <h3 className="absolute top-4 md:top-10 uppercase tracking-[20px] text-[#f7ab0a] text-2xl">
         Contato
       </h3>
       {mail ? (
-        <AiFillCheckCircle className="bg-transparent z-30 absolute right-0 top-32 h-12 w-12 text-green-500" />
+        <AiFillCheckCircle className="bg-transparent z-30 absolute right-0 lg:right-10 top-32 h-12 w-12 text-green-500" />
       ) : null}
 
-      <div className="flex flex-col  mt-[140px] space-y-10 absolute">
+      <div className="flex flex-col  mt-[180px] space-y-10 absolute">
         <div className="space-y-10">
           <div className="flex items-center space-x-5 justify-center">
             <AiOutlinePhone className="text-[#F7AB0A] h-7 w-7 animate-pulse" />

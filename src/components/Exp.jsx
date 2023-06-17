@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Lenux1 from "./assets/Lenux1.png";
@@ -41,7 +41,7 @@ function Exp() {
         className=" relative flex flex-col text-left 
      max-w-full justify-evenly mx-auto items-center z-0"
       >
-        <h3 className=" font-bold my-14 uppercase tracking-[20px] text-center  text-[#66FCF1] text-2xl">
+        <h3 className=" font-bold my-14 uppercase tracking-[7px] lg:tracking-[20px] text-center  text-[#66FCF1] text-2xl">
           Projetos Pessoais
         </h3>
 

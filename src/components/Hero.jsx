@@ -1,5 +1,5 @@
 import { Cursor, useTypewriter } from "react-simple-typewriter";
-import BackgroundCircles from "./BackgroundCircles";
+import BackgroundLines from "./BackgroundLines";
 import { motion } from "framer-motion";
 
 function Hero() {
@@ -15,7 +15,7 @@ function Hero() {
 
   return (
     <main className="h-[90vh] bg-black/60 flex relative flex-col items-center justify-center">
-      <BackgroundCircles />
+      <BackgroundLines />
 
       <motion.div
         initial={{
