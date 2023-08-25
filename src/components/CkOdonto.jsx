@@ -22,8 +22,10 @@ import "../pages/styles.css";
 // import required modules
 import { Pagination, Navigation } from "swiper";
 import { SocialIcon } from "react-social-icons";
+import { UserLanguage } from "./LanguageContext";
 
 function CkOdonto() {
+  const {language} = UserLanguage()
   return (
     <div className=" bg-gray-200 xl:h-screen ">
       <div className="items-center flex flex-row justify-between h-[50px] w-full">
@@ -38,9 +40,9 @@ function CkOdonto() {
           Ck Odontologia
         </h3>
 
-        <Link to="">
+        <Link to="/">
           <button className=" text-slate-900 font-bold hidden mx-6 md:flex">
-            .
+            Home
           </button>
         </Link>
       </div>
@@ -101,18 +103,31 @@ function CkOdonto() {
 
         <div className="flex flex-col items-center">
           <div className=" py-2 bg-white/30 xl:w-[400px] px-2 xl:mx-0 mx-10">
+            {language ?
+             <p className="font-semibold text-slate-950 md:text-lg">
+            My first professional website as a freelance web developer.
+              I worked alone on the code and design. I had complete freedom to
+              create, and i hope to be the first of many. Domain:
+              ckodontologia.online
+              </p>
+              :
             <p className="font-semibold text-slate-950 md:text-lg">
               Meu primeiro site profissional como desenvolvedor web freelancer.
               Trabalhei sozinho no código e design. Tive liberdade total para
               criar e espero ser o primeiro de muitos. Domínio:
               ckodontologia.online
-            </p>
+              </p>
+            }
           </div>
 
           <a href="https://github.com/DanielGPO/Ck-odontologia">
-            <div className="hover:cursor-pointer hover:bg-gray-600 my-4 flex flex-row bg-gray-700 text-white rounded-xl items-center p-2 w-[220px]">
-              <p className="text-lg font-semibold">Código no Github:</p>
+            <div className="hover:cursor-pointer lg:w-auto hover:bg-gray-600 my-4 flex flex-row bg-gray-700 text-white rounded-xl items-center p-2">
+              {language ?
+              <p className="text-lg font-semibold">Github Code</p>
+                :
+                <p className="text-lg font-semibold">Código no Github</p>
 
+              }
               <SocialIcon
                 fgColor="white"
                 network="github"
@@ -121,8 +136,12 @@ function CkOdonto() {
             </div>
           </a>
           <a href="https://ckodontologia.vercel.app/">
-            <div className="hover:cursor-pointer hover:bg-slate-700 my-4 flex flex-row bg-black text-[#66FCF1]  rounded-xl items-center p-4 w-[120px]">
-              <p className="text- font-extrabold">Visitar Site</p>
+            <div className="hover:cursor-pointer lg:w-auto hover:text-white hover:border-blue-500 hover:border-[2px] my-4 flex flex-row bg-black text-[#66FCF1]  rounded-xl items-center p-4 ">
+              {language ?
+         <p className="text- font-extrabold">Visit Web Site</p>
+          : 
+        <p className="text- font-extrabold">Visitar Site</p>
+}
             </div>
           </a>
 

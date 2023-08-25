@@ -20,8 +20,10 @@ import "./styles.css";
 // import required modules
 import { Pagination, Navigation } from "swiper";
 import { SocialIcon } from "react-social-icons";
+import { UserLanguage } from "../components/LanguageContext";
 
 function Lenux() {
+  const {language} = UserLanguage()
   return (
     <div className=" bg-gray-200 xl:h-screen ">
       <div className="items-center flex flex-row justify-between h-[50px] w-full">
@@ -37,9 +39,14 @@ function Lenux() {
         </h3>
 
         <Link to="/netflix">
-          <button className=" text-slate-900 font-bold hidden mx-6 md:flex">
+          {language ?
+                <button className=" text-slate-900 font-bold hidden mx-6 md:flex">
+            Next Project
+            </button>
+            :
+            <button className=" text-slate-900 font-bold hidden mx-6 md:flex">
             Próximo
-          </button>
+          </button>}
         </Link>
       </div>
 
@@ -100,6 +107,16 @@ function Lenux() {
 
         <div className="flex flex-col items-center">
           <div className=" py-2 bg-white/30 xl:w-[400px] px-2 xl:mx-0 mx-10">
+            {language ?
+             <p className="font-semibold text-slate-950 md:text-lg">
+              This was my first project made with HTML, I had the intention of
+              use Grid and Flexbox in practice, I found this design on a website
+              called NicePage and fell in love with it. The greatest difficulty in
+              time was to use the Grid the way I wanted. Although the most modern tools are React,
+              Angular and etc, I think it's important to show that I also know how to do
+              basic, but honestly this project has a place in my heart.
+              </p>
+              : 
             <p className="font-semibold text-slate-950 md:text-lg">
               Este foi meu primeiro projeto feito com HTML, tinha o intuito de
               usar Grid e Flexbox na prática, encontrei esse design em um site
@@ -108,13 +125,18 @@ function Lenux() {
               consegui. Apesar das ferramentas mais modernas serem React,
               Angular e etc, eu acho importante mostrar que também sei fazer o
               básico, mas honestamente esse proejto tem um lugar no meu coração.{" "}
-            </p>
+              </p>
+            }
           </div>
 
           <a href="https://github.com/bison7gpo/Project-1/tree/master">
-            <div className="hover:cursor-pointer hover:bg-gray-600 my-4 flex flex-row bg-gray-700 text-white rounded-xl items-center p-2 w-[220px]">
-              <p className="text-lg font-semibold">Código no Github:</p>
+            <div className="hover:cursor-pointer lg:w-auto hover:bg-gray-600 my-4 flex flex-row bg-gray-700 text-white rounded-xl items-center p-2">
+              {language ?
+              <p className="text-lg font-semibold">Github Code</p>
+ :
+              <p className="text-lg font-semibold">Código no Github</p>
 
+            }
               <SocialIcon
                 fgColor="white"
                 network="github"
@@ -128,12 +150,16 @@ function Lenux() {
               Home
             </Link>
 
-            <Link
-              className="m-2 text-black font-bold mx-5 md:hidden"
-              to="/netflix"
-            >
-              Próximo
-            </Link>
+                <Link to="/netflix">
+          {language ?
+                <button className=" text-slate-900 font-bold mx-6 md:hidden">
+            Next Project
+            </button>
+            :
+            <button className=" text-slate-900 font-bold mx-6 md:hidden">
+            Próximo
+          </button>}
+        </Link>
           </div>
         </div>
       </div>

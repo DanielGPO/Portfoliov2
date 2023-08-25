@@ -20,8 +20,10 @@ import "./styles.css";
 // import required modules
 import { Pagination, Navigation } from "swiper";
 import { SocialIcon } from "react-social-icons";
+import { UserLanguage } from "../components/LanguageContext";
 
 function Netflix() {
+  const {language} = UserLanguage()
   return (
     <div className=" bg-gray-200 xl:h-screen ">
       <div className="items-center flex flex-row justify-between h-[50px] w-full">
@@ -36,10 +38,15 @@ function Netflix() {
           Netflix Clone
         </h3>
 
-        <Link to="/amzclone">
+        <Link to="/MyBlog">
+          {language ?
           <button className=" text-slate-900 font-bold hidden mx-6 md:flex">
+            Next Project
+            </button>
+            : <button className=" text-slate-900 font-bold hidden mx-6 md:flex">
             Próximo
           </button>
+          }
         </Link>
       </div>
 
@@ -102,6 +109,17 @@ function Netflix() {
 
         <div className="flex flex-col items-center">
           <div className=" py-2 bg-white/30 xl:w-[400px] px-2 xl:mx-0 mx-10">
+            {language ?
+                <p className="font-semibold text-slate-950 md:text-lg">
+                      It was created in order to learn to use tailwindcss but desired
+              also using firebase and useContext for account creation and
+              login, also has a Protected Route and tried to play around a bit
+              placing the Netflix intro video when clicking on one of the
+              shows. Very simple but very fun to do. I was impressed with
+              how easy firebase creates a account creation system.
+              I intend to use it more often in the future. 
+              </p>
+              :
             <p className="font-semibold text-slate-950 md:text-lg">
               Foi Criado no intuito de aprender a usar tailwindcss mas acabei
               também usando o firebase e useContext para criação de conta e
@@ -110,13 +128,18 @@ function Netflix() {
               shows. Bem simples porém muito divertido. Me impressionei com o
               quão fácil o firebase cria um sistema de criação de conta.
               Pretendo usar mais vezes no futuro.
-            </p>
+              </p>
+            }
           </div>
 
           <a href="https://github.com/bison7gpo/Netflix-clone-Project/tree/master">
-            <div className="hover:cursor-pointer hover:bg-gray-600 my-4 flex flex-row bg-gray-700 text-white rounded-xl items-center p-2 w-[220px]">
-              <p className="text-lg font-semibold">Código no Github:</p>
+            <div className="hover:cursor-pointer lg:w-auto hover:bg-gray-600 my-4 flex flex-row bg-gray-700 text-white rounded-xl items-center p-2">
+              {language ?
+            <p className="text-lg font-semibold">Github Code</p>
 
+                :
+           <p className="text-lg font-semibold">Código no Github</p>
+}
               <SocialIcon
                 fgColor="white"
                 network="github"
@@ -130,12 +153,16 @@ function Netflix() {
               Home
             </Link>
 
-            <Link
-              className="m-2 text-black font-bold mx-5 md:hidden"
-              to="/amzclone"
-            >
-              Próximo
-            </Link>
+            <Link to="/MyBlog">
+          {language ?
+          <button className=" text-slate-900 font-bold mx-6 md:hidden">
+            Next Project
+            </button>
+            : <button className=" text-slate-900 font-bold mx-6 md:hidden">
+            Próximo
+          </button>
+          }
+        </Link>
           </div>
         </div>
       </div>

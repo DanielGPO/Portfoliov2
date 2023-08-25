@@ -6,11 +6,15 @@ import DigitalX from "./pages/DigitalX";
 import Lenux from "./pages/Lenux";
 import Netflix from "./pages/Netflix";
 import CkOdonto from "./components/CkOdonto";
+import { LanguageContext } from "./components/LanguageContext";
+import MyBlog from "./pages/MyBlog";
+
 
 
 function App() {
   return (
     <>
+      <LanguageContext >
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/amzclone" element={<Amzclone />} />
@@ -18,7 +22,9 @@ function App() {
         <Route path="/netflix" element={<Netflix />} />
         <Route path="/digitalx" element={<DigitalX />} />
         <Route path="/ckodonto" element={<CkOdonto />} />
+        <Route path="/MyBlog" element={<MyBlog />} />
       </Routes>
+      </LanguageContext>
     </>
   );
 }

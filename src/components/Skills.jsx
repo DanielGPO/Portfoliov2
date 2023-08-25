@@ -1,57 +1,68 @@
 import { motion } from "framer-motion";
+import { UserLanguage } from "./LanguageContext";
 function Skills() {
+  const {language} = UserLanguage()
   const skills = [
     {
       photo:
         "https://ui-lib.com/blog/wp-content/uploads/2021/12/nextjs-boilerplate-logo.png",
       alt: "Next.js",
       status: "Finalizado",
+      statuseng: "Finished",
     },
     {
       photo: "https://cdn.worldvectorlogo.com/logos/react-1.svg",
       alt: "React.js",
       status: "Finalizado",
+      statuseng: "Finished",
     },
     {
       photo:
         "https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png",
       alt: "HTML",
       status: "Finalizado",
+      statuseng: "Finished",
     },
     {
       photo:
         "https://www.pngkey.com/png/detail/624-6241203_css-icon-png-cascading-style-sheets.png",
       alt: "CSS",
       status: "Finalizado",
+      statuseng: "Finished",
     },
     {
       photo:
         "https://youteam.io/blog/wp-content/uploads/2022/04/expressjs_logo.png",
       alt: "Express.js",
-      status: "Progresso: 25%",
+      status: "Finalizado",
+      statuseng: "Finished",
     },
     {
       photo:
         "https://www.kindpng.com/picc/m/67-678384_transparent-javascript-icon-png-png-download.png",
       alt: "Javascript",
       status: "Finalizado",
+      statuseng: "Finished",
     },
     {
       photo:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk03fpMxbjzvgaDz2z3gu5G-9UeqgnNfUdd7gzSo9-er843XxKIG3g46lO1GRUF-L9UWs&usqp=CAU",
       alt: "Tailwind Css",
       status: "Finalizado",
+      statuseng: "Finished",
     },
     {
       photo: "https://upload.wikimedia.org/wikipedia/commons/4/49/Redux.png",
       alt: "Redux",
-      status: "Progresso: 50%",
+      status: "Progresso: 70%",
+      statuseng: "Progress: 70%",
     },
     {
       photo:
         "https://w7.pngwing.com/pngs/780/57/png-transparent-node-js-javascript-database-mongodb-native-miscellaneous-text-trademark.png",
       alt: "Node.js",
-      status: "Progresso: 50%",
+      status: "Finalizado",
+      statuseng: "Finished",
     },
   ];
 
@@ -72,10 +83,15 @@ function Skills() {
       >
         {skills.map((skill, i) => (
           <div key={i} className="relative">
-            <div className="absolute hidden lg:inline-block  md:w-full h-full bg-blue-950/60 opacity-0 hover:opacity-100 text-white rounded-full">
-              <p className="absolute right-10 bottom-14 font-bold text-2xl">
-                {skill.status}
+            <div className="absolute hidden lg:inline-block  md:w-[350px] h-full bg-blue-950/60 opacity-0 hover:opacity-100 text-white rounded-full">
+              {language ?
+                  <p className="absolute right-10 bottom-7 font-bold text-2xl">
+                {skill.statuseng}
               </p>
+               : 
+              <p className="absolute right-10 bottom-12 font-bold text-2xl">
+                {skill.status}
+              </p>}
             </div>
             <img
               className="rounded-full border border-gray-500 object-cover w-20 h-20 xl:w-32

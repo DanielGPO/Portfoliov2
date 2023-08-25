@@ -6,7 +6,11 @@ import {
   AiFillCheckCircle,
 } from "react-icons/ai";
 import { BsMap } from "react-icons/bs";
+import { UserLanguage } from "./LanguageContext";
+
 function Contato() {
+
+  const {language} = UserLanguage()
   const form = useRef();
   const [mail, setmail] = useState(false);
 
@@ -40,9 +44,16 @@ function Contato() {
       className="h-screen pb-24 xl:pb-10 flex relative flex-col text-center
      md:text-left md:flex-row px-10 justify-evenly mx-auto items-center bg-gradient-to-t from-black to-slate-800"
     >
-      <h3 className="absolute top-4 md:top-10 uppercase tracking-[20px] text-[#f7ab0a] text-2xl">
+      {language ?
+          <h3 className="absolute top-4 md:top-10 uppercase tracking-[20px] text-[#f7ab0a] text-2xl">
+          Contact
+      </h3>
+      :
+          <h3 className="absolute top-4 md:top-10 uppercase tracking-[20px] text-[#f7ab0a] text-2xl">
         Contato
       </h3>
+      }
+    
       {mail ? (
         <AiFillCheckCircle className="bg-transparent z-30 absolute right-0 lg:right-10 top-32 h-12 w-12 text-green-500" />
       ) : null}

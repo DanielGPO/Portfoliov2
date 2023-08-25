@@ -20,8 +20,10 @@ import "./styles.css";
 // import required modules
 import { Pagination, Navigation } from "swiper";
 import { SocialIcon } from "react-social-icons";
+import { UserLanguage } from "../components/LanguageContext";
 
 function DigitalX() {
+  const {language} = UserLanguage()
   return (
     <div className=" bg-gray-200 xl:h-screen ">
       <div className="items-center flex flex-row justify-between h-[50px] w-full">
@@ -37,9 +39,15 @@ function DigitalX() {
         </h3>
 
         <Link to="/lenux">
+          {language ?
+           <button className=" text-slate-900 font-bold hidden mx-6 md:flex">
+            Next Project
+            </button>
+            :
           <button className=" text-slate-900 font-bold hidden mx-6 md:flex">
             Próximo
           </button>
+         }
         </Link>
       </div>
 
@@ -100,17 +108,28 @@ function DigitalX() {
 
         <div className="flex flex-col items-center">
           <div className=" py-2 bg-white/30 xl:w-[400px] px-2 xl:mx-0 mx-10">
+            {language ?
+             <p className="font-semibold text-slate-950 md:text-lg">
+           
+I have this habit of creating web applications without any
+              design in mind, with no idea how it will end. this case was
+              one of them, one of my first projects made with HTML5
+              </p>
+              :
             <p className="font-semibold text-slate-950 md:text-lg">
               Eu possuo esse hábito de querer criar aplicações web sem nenhum
               design em mente, sem ter ideia de como vai terminar. Esse caso foi
               um deles, um dos meus primeiros projetos feitos com HTML5.{" "}
-            </p>
+            </p>}
           </div>
 
           <a href="https://github.com/bison7gpo/DigitalX/tree/master">
-            <div className="hover:cursor-pointer hover:bg-gray-600 my-4 flex flex-row bg-gray-700 text-white rounded-xl items-center p-2 w-[220px]">
-              <p className="text-lg font-semibold">Código no Github:</p>
-
+            <div className="hover:cursor-pointer lg:w-auto hover:bg-gray-600 my-4 flex flex-row bg-gray-700 text-white rounded-xl items-center p-2 ">
+              {language ?
+                <p className="text-lg font-semibold">Github Code</p>
+               :
+                <p className="text-lg font-semibold">Código no Github</p>
+}
               <SocialIcon
                 fgColor="white"
                 network="github"
@@ -124,12 +143,17 @@ function DigitalX() {
               Home
             </Link>
 
-            <Link
-              className="m-2 text-black font-bold mx-5 md:hidden"
-              to="/lenux"
-            >
-              Próximo
-            </Link>
+              <Link to="/lenux">
+          {language ?
+           <button className=" text-slate-900 font-bold mx-6 md:hidden">
+            Next Project
+            </button>
+            :
+          <button className=" text-slate-900 font-bold mx-6 md:hidden">
+            Próximo
+          </button>
+         }
+        </Link>
           </div>
         </div>
       </div>

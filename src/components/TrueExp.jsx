@@ -2,13 +2,17 @@ import { Link } from "react-router-dom";
 import ck1 from "../components/assets/Ck1.png";
 import Breve from "./assets/breve.jpg";
 import { motion } from "framer-motion";
+import { UserLanguage } from "./LanguageContext";
 function TrueExp() {
+  const { language } = UserLanguage()
+  
   const experience = [
     {
       name: "CK Odontologia",
       photo: ck1,
       description:
         "Site criado para a clínica odontológica Ck Odontologia com o intuito de prospectar novos clientes e se estabelecer no mercado como um competidor regional.",
+      descriptionEng: "Website created for the dental clinic Ck Odontologia in order to prospect new customers and establish itself in the market as a regional competitor.",
       contract: "Freelancer",
       path: "/ckodonto",
     },
@@ -37,9 +41,14 @@ function TrueExp() {
   return (
     <div className="pb-5 bg-slate-900/95">
       <div>
+        {language ? 
+        <p className="font-bold py-14 uppercase tracking-[13px] md:tracking-[20px] text-center  text-white text-2xl">
+          Experience
+        </p>
+        : 
         <p className="font-bold py-14 uppercase tracking-[13px] md:tracking-[20px] text-center  text-white text-2xl">
           Experiências
-        </p>
+        </p>}
       </div>
 
       <motion.div
@@ -66,9 +75,14 @@ function TrueExp() {
                 alt={exp.name}
               />
               <div className=" bg-black/75 top-0 absolute left-0 opacity-0 hover:opacity-100 right-0 bottom-0">
+                {language ? 
+                  <p className="text-white px-5 text-center my-20 font-extrabold text-xl">
+                  {exp.descriptionEng}
+                </p>
+                : 
                 <p className="text-white px-5 text-center my-20 font-extrabold text-xl">
                   {exp.description}
-                </p>
+                </p>}
 
                 <p className="text-white text-bold m-2">{exp.contract}</p>
               </div>

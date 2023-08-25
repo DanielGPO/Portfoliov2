@@ -1,13 +1,27 @@
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundLines from "./BackgroundLines";
 import { motion } from "framer-motion";
+import { UserLanguage } from "./LanguageContext";
 
 function Hero() {
-  const [text, count] = useTypewriter({
+    const {language} = UserLanguage()
+
+
+  const [text] = useTypewriter({
     words: [
       "Olá, meu nome é Daniel Gomes",
       "... Quero ser um desenvolvedor Full-stack",
       "<Esse é meu Portfólio />",
+    ],
+    loop: true,
+    delaySpeed: 2000,
+  });
+
+  const [text2] = useTypewriter({
+    words: [
+      "Hi, my name is Daniel Gomes",
+      "... I Wanna be a Full-stack developer",
+      "<This is my Portfolio />",
     ],
     loop: true,
     delaySpeed: 2000,
@@ -38,7 +52,11 @@ function Hero() {
         />
 
         <h1 className="text-md md:text-5xl font-semibold px-10 relative">
-          <span className="mr-3 text-slate-200">{text}</span>
+          {language ? 
+            <span className="mr-3 text-slate-200">{text2}</span>
+            :
+            <span className="mr-3 text-slate-200">{text}</span>
+         }
           <Cursor cursorColor="#ffff" />
         </h1>
       </motion.div>
@@ -48,7 +66,13 @@ function Hero() {
 
       <div className="pt-5 flex flex-row xl:mx-auto">
         <a href="#projetos">
-          <button className="heroButton">Projetos Pessoais</button>
+          {language
+            ?
+            <button className="heroButton">Personal Projects</button>
+            :
+            <button className="heroButton">Projetos Pessoais</button>
+
+         }
         </a>
 
         <a href="#skills">
@@ -56,11 +80,21 @@ function Hero() {
         </a>
 
         <a href="#xp">
-          <button className="heroButton">Experiência</button>
+          {language ? 
+            <button className="heroButton">Experience</button>
+
+          :
+            <button className="heroButton">Experiência</button>
+}
         </a>
 
         <a className="hidden md:flex" href="#sobre">
-          <button className="heroButton">Sobre mim</button>
+          {language
+            ? 
+          <button className="heroButton">About me</button>
+            :
+            <button className="heroButton">Sobre mim</button>
+}
         </a>
       </div>
     </main>
